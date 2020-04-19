@@ -1,0 +1,135 @@
+/* CORE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* FLIP SECTIN */
+#flip {
+  height: 100vh;
+  background: linear-gradient(30deg, #0e72ff, #013f96);
+  display: grid;
+  place-content: center;
+  position: relative;
+  overflow-x: hidden;
+  perspective: 1000px;
+}
+
+.flip-card {
+  position: absolute;
+  height: 250px;
+  width: 200px;
+  margin-top: 15%;
+  margin-left: 43%;
+  transition: all .5s;
+  transform-style: preserve-3d;
+}
+
+.flip-box {
+  position: absolute;
+  color: #fff;
+  display: grid;
+  place-content: center;
+  border-radius: 30px;
+  height: 250px;
+  width: 200px;
+  background-color: rgb(1, 177, 1);
+  transition: all .5s;
+  box-shadow: 0rem 4rem 3rem rgba(0, 0, 0, .2);
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.flip-card:hover {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.flip-box-back {
+  background-color: rgb(243, 29, 29);
+  transform: rotateY(180deg);
+}
+
+
+/* UTILITIS */
+#container {
+  perspective: 1000px;
+  padding: 0 10%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, rgb(155, 66, 124), #5e204d);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#container .box {
+  border-radius: 40px;
+  border: #fff 6px solid;
+  color: #fff;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  margin: 0 1rem;
+  background-color: rgba(0, 0, 0, .2);
+  transition: all 0.5s;
+  box-shadow: 0rem 4rem 3rem rgba(0, 0, 0, .45);
+}
+
+#container .box h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 3px #ccc solid;
+}
+
+#container .box p {
+  padding: 0 1.4rem 1rem;
+  line-height: 1.7;
+}
+
+/* ROTATE SECTION */
+
+#container .box-rotate:hover {
+  transform: rotateX(20deg) rotateY(5deg) rotateZ(5deg);
+}
+
+/* TRANSLATETE SECTION */
+#container:nth-child(2) {
+  background: linear-gradient(0deg, rgb(175, 122, 91), #86573C);
+}
+
+.box-translate:hover {
+  /* transform: translate3d(-1rem, -2rem, .5rem); */
+  transform: translateZ(4rem);
+}
+
+/* SCALE SECTION */
+#container:nth-child(3) {
+  background: linear-gradient(0deg, rgb(75, 83, 143), #2D325A);
+}
+
+.box-scale {
+  transform-origin: bottom;
+}
+
+.box-scale:hover {
+  transform: scale(1.1, 1.1);
+}
+
+/* SKEW SECTION */
+.box-skew:hover {
+  transform: skew(5deg, 11deg);
+}
+
+/* BOTH SECTION */
+#container:nth-child(5) {
+  background: linear-gradient(0deg, rgb(129, 44, 44), rgb(77, 18, 18));
+}
+
+.box-both:hover {
+  transform: rotateX(20deg) rotateY(5deg) rotateZ(5deg) translateZ(3rem) skew(5deg, 11deg);
+}
